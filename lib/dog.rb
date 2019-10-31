@@ -57,6 +57,8 @@ class Dog
         return self
       end
     end
+    
+    def self.create()
         
       
   
