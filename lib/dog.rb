@@ -32,7 +32,14 @@ class Dog
       dog
     end
     
-    
+    def self.find_by_name(name)
+      sql = <<-SQL
+      SELECT * FROM dogs
+      WHERE dogs.name = ?
+      SQL
+      
+      DB[:conn].execute(sql, name).map { |row| new_from_db(row)}.first
+    end
         
       
   
