@@ -25,7 +25,14 @@ class Dog
       DB[:conn].execute(sql)
     end
     
-    
+    def self.new_from_db
+      sql = <<-SQL
+      SELECT * FROM dogs
+      SQL
+      
+      DB[:conn].execute(sql).each do |row|
+        dog = Dog.new
+        dog.name = 
       
   
   
