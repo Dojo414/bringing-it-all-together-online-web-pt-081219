@@ -32,7 +32,7 @@ class Dog
       
       DB[:conn].execute(sql).each do |row|
         dog = Dog.new
-        dog.name = 
+        
       
   
   
